@@ -1,0 +1,560 @@
+:root{
+
+    --clr-primary-white: rgb(255, 255, 255);
+}
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  scroll-behavior:  smooth;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove default padding */
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  background-color: var(--clr-primary-black);
+  margin: 0;
+  padding-left: 50px;
+  padding-right: 50px;
+
+
+}
+@font-face {
+  font-family: 'SuisseIntl-Bold';
+  src: url(font/SuisseIntl-Bold.ttf) format('truetype');
+
+}
+@font-face {
+  font-family: 'Suisse-Intl-Medium';
+  src: url(font/Suisse-Intl-Medium.ttf) format('truetype');
+
+}
+h1,
+h2,
+h3,
+h4,
+
+h5,
+h6 {
+  font-size: 1.6rem;
+}
+
+p {
+  font-size: 1.6rem;
+  line-height: 1.6;
+}
+
+ul,
+ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+header{
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  height: 50px;
+  font-family: 'Suisse-Intl-Medium';
+  font-weight: 400;
+   
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -2rem;
+}
+nav{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 0;
+    padding-top: 40px;
+    background-color: transparent !important;
+    font-size: 16px;
+    font-weight: 100;
+}
+
+.navigation-menus{
+  display: flex;
+  gap: 1em;
+}
+.navigation-menus ul{
+    display: flex;
+    align-items: center;
+    gap: 2em;
+    list-style: none;
+    line-height: 1.6;
+    font-size: 16px;
+}
+/* Base styles */
+.navigation-menus ul li {
+  position: relative;
+  padding-bottom: 0px; /* Space for the underline */
+  transition: all 0.5s ease-in-out; /* Transition for padding changes */
+}
+
+/* Initial state of the underline */
+.navigation-menus ul li::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background-color: black;
+  transform: scaleX(0);
+  transition: transform 0.5s ease-in-out;
+  transform-origin: bottom right;
+}
+
+/* Hover state for the underline */
+.navigation-menus ul li:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+.cv-button-wrapper{
+  width: fit-content;
+  margin-top: 20px;
+ 
+}
+.cv-button-wrapper a{
+  width: 150px;
+  height: 50px;
+  border: none !important;
+  background-color: black;
+  color: white;
+  border-radius: 30px;
+  place-content: center;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cv-button-wrapper a:hover{
+  background-color: rgb(121, 131, 142);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.landing-page{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    place-content: center;
+    text-align: center;
+    align-items: center;
+    font-family: 'SuisseIntl-Bold';
+    color: black;
+    line-height:70px;
+    font-stretch: condensed;
+}
+/* .navigation-menus .get-in-touch{
+  width: 150px;
+  height: 50px;
+  background-color: transparent;
+  border: solid 1px black;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;   
+  align-items: center;
+  place-items: center;       
+  cursor: pointer;
+  font-weight: 500;     
+  font-family: 'Suisse-Intl-Medium';
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+} */
+/* .navigation-menus .get-in-touch:hover{
+  background-color: black;
+  color: white;
+} */
+.hero-section{
+  width: 100%;
+  line-height: 60px;
+  padding-bottom: 20px;
+  
+  
+}
+.hero-section .role{
+  font-size: 10vw;
+  color: black;
+  text-transform: uppercase;
+  
+}
+.hero-section .location{
+  font-size:6vw;
+  font-weight: 700;
+  font-weight: 700;
+  color: rgb(121, 131, 142);
+  
+}
+.latitude{
+  position: absolute;
+  top: 120px; /* Adjust top position as needed */
+  right: 50px;
+  line-height: 20px;
+  
+}
+.latitude span{
+  font-size: 14px;
+  
+}
+.about{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+  font-family: 'Suisse-Intl-Medium';
+  padding-top: 50px;
+  
+}
+.about .about-me-content{
+  width: 50%;
+}
+
+.about-me{
+  width: 50%;
+  
+}
+.about-me p{
+  width: inherit;
+  text-align: center;
+}
+.about-me span{
+  font-family: 'Suisse-Intl-Medium';
+  font-size: 8vw;
+}
+.about-me-content{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    color: white;
+} 
+.project{
+  width: 100%;
+  height: 100vh;  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Suisse-Intl-Medium';
+}
+.project-content{
+  width: 50%;
+  display: grid;
+  place-items: center;
+}
+.project .project-list{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  margin-top: 20px;
+}
+.project-list>div{
+  width: 100%;
+  border-bottom: solid 1px black !important;
+  text-align: left;
+  padding: 20px;
+  
+}
+.project1, .project2, .project3 {
+  position: relative;
+  padding: 20px;
+  transition: all 0.3s ease; /* Smooth transition */
+  overflow: hidden; /* Hide overflowing elements */
+  height: 60px; /* Initial height */
+}
+.project1:hover, .project2:hover, .project3:hover {
+  height: 100px; /* Expanded height on hover */
+  
+}
+.project-wrapper {
+  position: relative;
+  padding-bottom: 0px; /* Space for the underline */
+  transition: all 0.5s ease-in-out; /* Transition for padding changes */
+}
+
+/* Initial state of the underline */
+.project-wrapper::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background-color: black;
+  transform: scaleX(0);
+  transition: transform 0.5s ease-in-out;
+  transform-origin: bottom right;
+}
+
+/* Hover state for the underline */
+.project-wrapper:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+.live-demo {
+  display: none; /* Hide the link initially */
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+  color: black;
+  text-decoration: none;
+  opacity: 0; /* Hide the link */
+  transition: opacity 0.5s ease; /* Smooth transition */
+}
+
+.project1:hover .live-demo, .project2:hover .live-demo, .project3:hover .live-demo {
+  display: inline-block; /* Show the link on hover */
+  opacity: 1; /* Ensure visibility */
+}
+.project-image{
+  width: 50%;
+}
+
+.project span{
+  font-family: 'Suisse-Intl-Medium';
+  font-size: 8vw;
+}
+.contact{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  place-items: center;
+  padding-top: 60px;
+  font-family: 'Suisse-Intl-Medium';
+
+}
+
+.contact span{
+  font-family: 'Suisse-Intl-Medium';
+  font-size: 8vw;
+}
+
+.contact_form {
+  width: 45%;
+  height: 430px;
+  color: rgb(121, 131, 142);
+  padding-top: 50px;
+  padding-left: 30px;
+  padding-right: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Add this line */
+} 
+
+/* contact form input will be 100% width in mobile size */
+.contact_form button {
+  width: 40%;
+  height: 50px;
+  background-color: black;
+  border: none;
+  border-radius: 30px;
+  margin-top: 30px;
+  color: white;
+  /* transition: background-color 0.3s ease, color 0.3s ease; Add this line */
+}
+
+.contact_form button:hover {
+  background-color: rgb(121, 131, 142);
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+}
+
+.contact_form input{
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  width: 100%;
+  border: none;
+  border-bottom: solid 1px black;
+  background-color: transparent;
+}
+.contact_form textarea{
+  width: 100%;
+  height: 150px;
+  resize: none;
+  background-color: transparent;
+}
+.contact_form input:focus{
+  outline: none;
+}
+.social-links{
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  place-items: center;
+  padding-left: 50px;
+}
+.social-links span{
+  font-size: 8vw;
+}
+.social-links p{
+  text-align: center;
+  color: #555D50;
+}
+.social-links .social-icons{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1em;
+  margin-top: 50px;
+  
+}
+.social-links .social-icons img{
+  width: 24px;
+  height: 24px;
+}
+footer{
+  width: 100%;
+  height: 100vh;
+  padding-top: 50px;
+}
+
+spline-viewer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Ensure it stays behind other content */
+}
+.project-thumbnail{
+  max-width: 45%;
+}
+.project-thumbnail img{
+  transition: opacity 0.5s ease-in-out;
+}
+@media only screen and (max-width: 376px) {
+  .landing-page .hero-section{
+    padding-bottom: 2px;
+    padding-left: 0px;
+    margin-left: 10px;
+  }
+  .landing-page .get-in-touch{
+    width: 100px;
+    height: 40px;
+    font-size: 12px;
+    margin-top: 280px;
+    margin-left: 10px;
+  }
+  body{
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .contact{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .contact_form{
+    width: 100%;
+  }
+  .contact_form button{
+    width: 100%;
+  }
+
+  .contact{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 60px;
+    font-family: 'Suisse-Intl-Medium';
+  
+  }
+  .social-links{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    
+  }
+  .navigation-menus ul{
+    display: none;
+  }
+  .primary-nav span{
+    display: none;
+  }
+}
+
