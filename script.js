@@ -1,6 +1,3 @@
-
-
-  // Project image change on hover
   const projectImage = document.getElementById('project-image');
   const projectItems = document.querySelectorAll('.project-list div');
 
@@ -14,4 +11,7 @@
           }, 300);
       });
   });
+
+  
+
 

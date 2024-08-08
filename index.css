@@ -139,14 +139,50 @@ nav{
     align-items: center;
     padding: 2rem 0;
     padding-top: 40px;
-    background-color: transparent !important;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
     font-size: 16px;
     font-weight: 100;
+}
+.navbar-toggler {
+  border: none;
+  background: none;
+  cursor: pointer;
+  position: relative;
+  display: none; /* Hide by default */
+}
+
+.animated-icon1 {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.animated-icon1 span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar-toggler.active .animated-icon1 span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.navbar-toggler.active .animated-icon1 span:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar-toggler.active .animated-icon1 span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
 }
 
 .navigation-menus{
   display: flex;
   gap: 1em;
+  margin-left: auto;
+  margin-right: 30px;
 }
 .navigation-menus ul{
     display: flex;
@@ -218,8 +254,8 @@ nav{
     line-height:70px;
     font-stretch: condensed;
 }
-/* .navigation-menus .get-in-touch{
-  width: 150px;
+.primary-nav .connect{
+  width: 150px !important;
   height: 50px;
   background-color: transparent;
   border: solid 1px black;
@@ -233,11 +269,11 @@ nav{
   font-family: 'Suisse-Intl-Medium';
   transition: background-color 0.3s ease, color 0.3s ease;
 
-} */
-/* .navigation-menus .get-in-touch:hover{
+}
+ .primary-nav .connect:hover{
   background-color: black;
   color: white;
-} */
+} 
 .hero-section{
   width: 100%;
   line-height: 60px;
@@ -246,27 +282,15 @@ nav{
   
 }
 .hero-section .role{
-  font-size: 10vw;
-  color: black;
+  font-size: clamp(50px, 10vw + 2rem, 130px);
+  color: black !important;
   text-transform: uppercase;
   
 }
 .hero-section .location{
-  font-size:6vw;
-  font-weight: 700;
-  font-weight: 700;
-  color: rgb(121, 131, 142);
-  
-}
-.latitude{
-  position: absolute;
-  top: 120px; /* Adjust top position as needed */
-  right: 50px;
-  line-height: 20px;
-  
-}
-.latitude span{
-  font-size: 14px;
+  font-size: 6vw;
+  color:rgb(121, 131, 142);
+  text-transform: uppercase;
   
 }
 .about{
@@ -274,9 +298,11 @@ nav{
   height: 100vh;
   display: flex;
   justify-content: space-between;
-  /* align-items: center; */
+  align-items: center;
   font-family: 'Suisse-Intl-Medium';
   padding-top: 50px;
+  text-align: center;
+
   
 }
 .about .about-me-content{
@@ -285,25 +311,99 @@ nav{
 
 .about-me{
   width: 50%;
-  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  place-items: center;
+  line-height: 90px;
+ 
 }
 .about-me p{
   width: inherit;
   text-align: center;
+  color: #555D50;
 }
 .about-me span{
   font-family: 'Suisse-Intl-Medium';
-  font-size: 8vw;
+  font-size: clamp(50px, 8vw, 120px);
 }
 .about-me-content{
     width: 100%;
     height: 100vh;
     display: flex;
     flex-direction: row;
-    align-items: center;
-    text-align: center;
+    
+    
+    text-align: left;
     color: white;
+   
+    
 } 
+.about-me-content .profile{
+  width: 500px;
+  height: 500px;
+  
+}
+.profile img{
+  width: 100%;
+  height: 100%;
+ 
+
+}
+.tech-skills{
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.tech-skills .title{
+  width: 50%;
+  font-family: 'Suisse-Intl-Medium';
+  font-size:8vw;
+  align-self: center;
+}
+
+.tech-list {
+  width: 50%;
+  display: flex; 
+  justify-content:space-between; 
+  place-items: center;
+
+  
+}
+
+.tech-list .tech-item{
+  width: 120px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  place-items: center;
+  border: 1px solid black;
+  border-radius: 30px;
+  font-family: 'Suisse-Intl-Medium';
+  transition: background-color 0.3s ease, color 0.3s ease;
+  padding: 10px; 
+  color: black; 
+  text-align: center;
+}
+
+.tech-list .tech-item:hover{
+  background-color: black;
+  color: white;
+}
+
+.tech-list div:nth-child(4), .tech-list div:nth-child(5) {
+    grid-column: span 1;
+}
+
+.tech-list div:nth-child(4) {
+    justify-self: end;
+}
+
+.tech-list div:nth-child(5) {
+    justify-self: start;
+}
 .project{
   width: 100%;
   height: 100vh;  
@@ -334,21 +434,21 @@ nav{
 .project1, .project2, .project3 {
   position: relative;
   padding: 20px;
-  transition: all 0.3s ease; /* Smooth transition */
-  overflow: hidden; /* Hide overflowing elements */
-  height: 60px; /* Initial height */
+  transition: all 0.3s ease; 
+  overflow: hidden; 
+  height: 60px; 
 }
 .project1:hover, .project2:hover, .project3:hover {
-  height: 100px; /* Expanded height on hover */
+  height: 100px; 
   
 }
 .project-wrapper {
   position: relative;
-  padding-bottom: 0px; /* Space for the underline */
-  transition: all 0.5s ease-in-out; /* Transition for padding changes */
+  padding-bottom: 0px; 
+  transition: all 0.5s ease-in-out; 
 }
 
-/* Initial state of the underline */
+
 .project-wrapper::after {
   content: '';
   position: absolute;
@@ -362,25 +462,25 @@ nav{
   transform-origin: bottom right;
 }
 
-/* Hover state for the underline */
+
 .project-wrapper:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
 }
-.live-demo {
-  display: none; /* Hide the link initially */
+.visit {
+  display: none; 
   position: absolute;
   bottom: 10px;
   right: 20px;
   color: black;
   text-decoration: none;
-  opacity: 0; /* Hide the link */
-  transition: opacity 0.5s ease; /* Smooth transition */
+  opacity: 0; 
+  transition: opacity 0.5s ease; 
 }
 
-.project1:hover .live-demo, .project2:hover .live-demo, .project3:hover .live-demo {
-  display: inline-block; /* Show the link on hover */
-  opacity: 1; /* Ensure visibility */
+.project1:hover .visit, .project2:hover .visit, .project3:hover .visit {
+  display: inline-block; 
+  opacity: 1;
 }
 .project-image{
   width: 50%;
@@ -413,10 +513,10 @@ nav{
   padding-top: 50px;
   padding-left: 30px;
   padding-right: 30px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Add this line */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); 
 } 
 
-/* contact form input will be 100% width in mobile size */
+
 .contact_form button {
   width: 40%;
   height: 50px;
@@ -425,7 +525,7 @@ nav{
   border-radius: 30px;
   margin-top: 30px;
   color: white;
-  /* transition: background-color 0.3s ease, color 0.3s ease; Add this line */
+
 }
 
 .contact_form button:hover {
@@ -488,25 +588,33 @@ footer{
   padding-top: 50px;
 }
 
-spline-viewer {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1; /* Ensure it stays behind other content */
-}
 .project-thumbnail{
   max-width: 45%;
 }
 .project-thumbnail img{
   transition: opacity 0.5s ease-in-out;
 }
-@media only screen and (max-width: 376px) {
+.splitting .char {
+  animation: slide-in 1.6s cubic-bezier(.2, 0, .1, 1) both;
+  animation-delay: calc(30ms * var(--char-index));
+  will-change:transform;
+  transform-origin: top left;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateY(10px) scaleY(1.5);
+    opacity: 0;
+  }
+}
+
+
+@media (max-width: 767px) {
   .landing-page .hero-section{
     padding-bottom: 2px;
     padding-left: 0px;
     margin-left: 10px;
+    line-height: 40px;
   }
   .landing-page .get-in-touch{
     width: 100px;
@@ -545,16 +653,166 @@ spline-viewer {
     width: 100%;
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-direction: column;
     margin-bottom: 20px;
     margin-top: 20px;
+    padding-left: 0px;
     
   }
   .navigation-menus ul{
     display: none;
   }
+
   .primary-nav span{
     display: none;
   }
+  .about{
+  width: 100%;
+  height: 150vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: 'Suisse-Intl-Medium';
+  
 }
+.about-me{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+.about-me-content .profile{
+  width: 100%;
+  height: 300px;
+  
+}
+.about .about-me-content{
+  width: 100%;
+}
+.about-me span{
+  font-family: 'Suisse-Intl-Medium';
+   font-size: clamp(50px, 8vw, 120px);
+  text-align: left;
+}
+
+.tech-skills{
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  place-items: center;
+  text-align: center;
+  gap: 2rem;
+
+}
+.tech-list{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  place-items: center;
+}
+.tech-skills .title{
+  width: 100%;
+  font-size: clamp(50px, 8vw, 120px);
+  order: 1;
+}
+.tech-skills .tech-list{
+  order: 2;
+}
+.project .project-thumbnail{
+  display: none;
+}
+.project .project-content{
+  width: 100%;
+}
+.project-content span{
+  font-size: clamp(50px, 8vw, 120px);
+}
+.social-links .get-in-touch{
+  font-size: clamp(50px, 8vw, 120px);
+}
+footer{
+  padding-top: 0px;
+}
+footer .contact{
+  padding-top: 0px;
+}
+
+.navbar-toggler {
+    display: block; 
+   
+}
+
+.navigation-menus {
+    display: flex; /* Ensure the element is a flex container */
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    padding-top: 50px;
+    opacity: 0; /* Start hidden */
+    transform: translateX(-100%); /* Start off-screen */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transition */
+}
+
+.navigation-menus.show {
+    opacity: 1; /* Fade in */
+    transform: translateX(0); /* Slide in */
+}
+
+.navigation-menus ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding: 1em; 
+    margin: 0;    
+}
+.navigation-menus ul li {
+    padding: 0.5em 1em; 
+  
+}
+.navigation-menus ul li a {
+    color: white;
+    font-size: 1.4rem; 
+    display: block;
+    font-size: 6vw;
+}
+
+.primary-nav span {
+    display: none; 
+}
+
+.animated-icon1 .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    transition: all 0.3s ease-in-out;
+    z-index: 100;
+    
+}
+.navbar-toggler.active .animated-icon1 span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.navbar-toggler.active .animated-icon1 span:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar-toggler.active .animated-icon1 span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+
+}
+
+
+
+
+
 
