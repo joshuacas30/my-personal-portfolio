@@ -619,14 +619,21 @@ footer{
     font-size: 12px;
     margin-left: 10px;
   }
+    .landing-page{
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+    text-align: left;
+    align-items: left;
+   
+}
  .hero-section .role{
-  font-size: clamp(50px, 14vw + 2rem, 130px);
+  font-size: clamp(50px, 12vw + 2rem, 130px);
   color: black !important;
   text-transform: uppercase;
   text-align: left;
- 
-  
 }
+    
 .hero-section .location{
   font-size: 10vw;
   color:rgb(121, 131, 142);
