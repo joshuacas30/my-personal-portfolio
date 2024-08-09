@@ -612,7 +612,7 @@ footer{
 
 @media (max-width: 767px) {
   .landing-page .hero-section{
-    padding-bottom: 2px;
+  
     padding-left: 0px;
     margin-left: 10px;
     line-height: 40px;
@@ -621,7 +621,7 @@ footer{
     width: 100px;
     height: 40px;
     font-size: 12px;
-    margin-top: 280px;
+   
     margin-left: 10px;
   }
   body{
@@ -675,6 +675,7 @@ footer{
   flex-direction: column;
   justify-content: space-between;
   font-family: 'Suisse-Intl-Medium';
+  margin-top: 0px;
   
 }
 .about-me{
