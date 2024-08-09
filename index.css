@@ -278,13 +278,13 @@ nav{
   width: 100%;
   line-height: 60px;
   padding-bottom: 20px;
-  
-  
+
 }
 .hero-section .role{
   font-size: clamp(50px, 10vw + 2rem, 130px);
   color: black !important;
   text-transform: uppercase;
+ 
   
 }
 .hero-section .location{
@@ -302,8 +302,6 @@ nav{
   font-family: 'Suisse-Intl-Medium';
   padding-top: 50px;
   text-align: center;
-
-  
 }
 .about .about-me-content{
   width: 50%;
@@ -612,18 +610,30 @@ footer{
 
 @media (max-width: 767px) {
   .landing-page .hero-section{
-  
     padding-left: 0px;
-    margin-left: 10px;
     line-height: 40px;
   }
   .landing-page .get-in-touch{
     width: 100px;
     height: 40px;
     font-size: 12px;
-   
     margin-left: 10px;
   }
+ .hero-section .role{
+  font-size: clamp(50px, 14vw + 2rem, 130px);
+  color: black !important;
+  text-transform: uppercase;
+  text-align: left;
+ 
+  
+}
+.hero-section .location{
+  font-size: 10vw;
+  color:rgb(121, 131, 142);
+  text-transform: uppercase;
+  text-align: left;
+  
+}
   body{
     padding-left: 10px;
     padding-right: 10px;
