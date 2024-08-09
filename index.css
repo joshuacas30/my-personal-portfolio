@@ -369,6 +369,7 @@ nav{
   display: flex; 
   justify-content:space-between; 
   place-items: center;
+  gap: 2rem;
 
   
 }
@@ -712,6 +713,7 @@ footer{
   flex-direction: column;
   justify-content: center;
   place-items: center;
+  gap: 2rem;
 }
 .tech-skills .title{
   width: 100%;
