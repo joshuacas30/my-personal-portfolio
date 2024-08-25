@@ -601,9 +601,12 @@ footer{
 
 .project-thumbnail{
   max-width: 45%;
+  height: 450px;
 }
 .project-thumbnail img{
   transition: opacity 0.5s ease-in-out;
+  width: 100%;
+  height: 100%;
 }
 .splitting .char {
   animation: slide-in 1.6s cubic-bezier(.2, 0, .1, 1) both;
