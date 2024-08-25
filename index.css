@@ -69,8 +69,7 @@ body {
   font-size: 1.6rem;
   background-color: var(--clr-primary-black);
   margin: 0;
-  padding-left: 50px;
-  padding-right: 50px;
+  
 
 
 }
@@ -124,6 +123,7 @@ header{
   height: 50px;
   font-family: 'Suisse-Intl-Medium';
   font-weight: 400;
+  
    
 }
 .row {
@@ -143,13 +143,16 @@ nav{
     backdrop-filter: blur(10px);
     font-size: 16px;
     font-weight: 100;
+    padding-left: 50px;
+    padding-right: 50px;
+    
 }
 .navbar-toggler {
   border: none;
   background: none;
   cursor: pointer;
   position: relative;
-  display: none; /* Hide by default */
+  display: none; 
 }
 
 .animated-icon1 {
@@ -192,14 +195,14 @@ nav{
     line-height: 1.6;
     font-size: 16px;
 }
-/* Base styles */
+
 .navigation-menus ul li {
   position: relative;
-  padding-bottom: 0px; /* Space for the underline */
-  transition: all 0.5s ease-in-out; /* Transition for padding changes */
+  padding-bottom: 0px; 
+  transition: all 0.5s ease-in-out; 
 }
 
-/* Initial state of the underline */
+
 .navigation-menus ul li::after {
   content: '';
   position: absolute;
@@ -213,7 +216,7 @@ nav{
   transform-origin: bottom right;
 }
 
-/* Hover state for the underline */
+
 .navigation-menus ul li:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
@@ -253,6 +256,7 @@ nav{
     color: black;
     line-height:70px;
     font-stretch: condensed;
+    margin-top: 20px;
 }
 .primary-nav .connect{
   width: 150px !important;
@@ -278,13 +282,12 @@ nav{
   width: 100%;
   line-height: 60px;
   padding-bottom: 20px;
-
+  
 }
 .hero-section .role{
   font-size: clamp(50px, 10vw + 2rem, 130px);
   color: black !important;
   text-transform: uppercase;
- 
   
 }
 .hero-section .location{
@@ -302,6 +305,7 @@ nav{
   font-family: 'Suisse-Intl-Medium';
   padding-top: 50px;
   text-align: center;
+
 }
 .about .about-me-content{
   width: 50%;
@@ -314,6 +318,7 @@ nav{
   justify-content: center;
   place-items: center;
   line-height: 90px;
+
  
 }
 .about-me p{
@@ -327,13 +332,12 @@ nav{
 }
 .about-me-content{
     width: 100%;
-    height: 100vh;
+    height: auto;
     display: flex;
     flex-direction: row;
-    
-    
     text-align: left;
     color: white;
+    
    
     
 } 
@@ -350,10 +354,17 @@ nav{
 }
 .tech-skills{
   width: 100%;
-  height: 50vh;
+  height: 100vh;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
+  place-items: center;
+  text-align: center;
+  text-wrap: wrap;
+  gap: 4rem;
+  color: white;
+  margin-top: 100px;
+  background-color: black;
 }
 .tech-skills .title{
   width: 50%;
@@ -368,28 +379,25 @@ nav{
   justify-content:space-between; 
   place-items: center;
   gap: 2rem;
-
-  
 }
-
 .tech-list .tech-item{
   width: 120px;
   height: 40px;
   display: flex;
   justify-content: center;
   place-items: center;
-  border: 1px solid black;
+  border: 1px solid white;
   border-radius: 30px;
   font-family: 'Suisse-Intl-Medium';
   transition: background-color 0.3s ease, color 0.3s ease;
   padding: 10px; 
-  color: black; 
+  color: white; 
   text-align: center;
 }
 
 .tech-list .tech-item:hover{
-  background-color: black;
-  color: white;
+  background-color: white;
+  color: black;
 }
 
 .tech-list div:nth-child(4), .tech-list div:nth-child(5) {
@@ -410,6 +418,8 @@ nav{
   justify-content: space-between;
   align-items: center;
   font-family: 'Suisse-Intl-Medium';
+  padding-left: 50px;
+  padding-right: 50px;
 }
 .project-content{
   width: 50%;
@@ -585,6 +595,8 @@ footer{
   width: 100%;
   height: 100vh;
   padding-top: 50px;
+  padding-left: 50px;
+  padding-right: 50px;
 }
 
 .project-thumbnail{
@@ -609,40 +621,42 @@ footer{
 
 
 @media (max-width: 767px) {
+    body{
+    padding: 0;
+  }
+  .primary-nav{
+    scroll-margin: 50px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .landing-page{
+    width: 100%;
+    height: 50vh;
+    margin-top: 100px;
+  }
   .landing-page .hero-section{
+    padding-bottom: 2px;
     padding-left: 0px;
-    line-height: 40px;
+    line-height: 50px;
+    text-align: center;
+    
   }
   .landing-page .get-in-touch{
     width: 100px;
     height: 40px;
     font-size: 12px;
+    margin-top: 280px;
     margin-left: 10px;
   }
- 
+  .cv-button-wrapper{
+    margin-top: 40px;
+    
+  }
   .cv-button-wrapper a{
     width: 180px;
     height: 60px;
-     
   }
- .hero-section .role{
-  font-size: clamp(50px, 10vw + 2rem, 130px);
-  color: black !important;
-  text-transform: uppercase;
-  text-align: cennter;
-}
-    
-.hero-section .location{
-  font-size: 10vw;
-  color:rgb(121, 131, 142);
-  text-transform: uppercase;
-  text-align: center;
-  
-}
-  body{
-    padding-left: 10px;
-    padding-right: 10px;
-  }
+ 
 
   .contact{
     display: flex;
@@ -676,6 +690,13 @@ footer{
     padding-left: 0px;
     
   }
+  .connect{
+    margin-right: 20px;
+  }
+  .animated-icon1{
+    margin-left: 20px ;
+  }
+ 
   .navigation-menus ul{
     display: none;
   }
@@ -685,27 +706,27 @@ footer{
   }
   .about{
   width: 100%;
-  height: 50%;
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   font-family: 'Suisse-Intl-Medium';
-  margin-top: 0px;
   
 }
 .about-me{
   width: 100%;
+  height: auto;
   display: flex;
   flex-direction: column;
   text-align: left;
-  margin-botton: 50px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 30px;
 }
 .about-me-content .profile{
   width: 100%;
-  height: 400px;
-}
-.about-me p{
-    margin-bottom: 50px;
+  height: 300px;
+  
 }
 .about .about-me-content{
   width: 100%;
@@ -718,13 +739,15 @@ footer{
 
 .tech-skills{
   width: 100%;
-  height: 80vh;
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   place-items: center;
   text-align: center;
-  gap: 2rem;
+  
+ padding-top: 100px;
+ padding-bottom: 100px;
 
 }
 .tech-list{
@@ -742,6 +765,10 @@ footer{
 .tech-skills .tech-list{
   order: 2;
 }
+.project{
+  padding-left: 20px;
+  padding-right: 20px;
+}
 .project .project-thumbnail{
   display: none;
 }
@@ -756,6 +783,8 @@ footer{
 }
 footer{
   padding-top: 0px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 footer .contact{
   padding-top: 0px;
@@ -767,7 +796,7 @@ footer .contact{
 }
 
 .navigation-menus {
-    display: flex; /* Ensure the element is a flex container */
+    display: flex; 
     flex-direction: column;
     width: 100%;
     height: 100vh;
@@ -777,14 +806,14 @@ footer .contact{
     left: 0;
     z-index: 99;
     padding-top: 50px;
-    opacity: 0; /* Start hidden */
-    transform: translateX(-100%); /* Start off-screen */
-    transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transition */
+    opacity: 0; 
+    transform: translateX(-100%); 
+    transition: opacity 0.5s ease, transform 0.5s ease; 
 }
 
 .navigation-menus.show {
-    opacity: 1; /* Fade in */
-    transform: translateX(0); /* Slide in */
+    opacity: 1; 
+    transform: translateX(0); 
 }
 
 .navigation-menus ul {
@@ -831,7 +860,6 @@ footer .contact{
 
 
 }
-
 
 
 
